@@ -132,3 +132,38 @@ mainSong.addEventListener("ended", () => {
     nextSong();
     playAudio();
 });
+
+const ulList = container.querySelector("ul");
+
+// let create li tags according to array length for list
+
+for (let i = 0; i < allSongs.length; i++) {
+   
+    let liTag = `<li li-index="${i + 1}">
+    <div class="row">
+      <span>${allSongs[i].name}</span>
+      <p>${allSongs[i].artist}</p>
+    </div>
+    <audio class="${allSongs[i].src}" src="./songs/${allSongs[i].src}.mp3">Attention</audio>
+    <span id="${allSongs[i].src}" class="song-duration">1:45</span>
+  </li>`;
+  
+  ulList.insertAdjacentHTML("beforeend", liTag);
+   
+  let liSongTag = ulList.querySelector(`.${allSongs[i].src}`);
+  let liSongDurationTag = ulList.querySelector(`#${allSongs[i].src}`);
+
+  liSongTag.addEventListener("loadeddata", () => {
+    let duration = liSongTag.duration;
+    let totalMin = Math.floor(duration / 60);
+    let totalSec = Math.floor(duration % 60);
+    if (totalSec < 10) { //if sec is less than 10 then add 0 before it
+        totalSec = `0${totalSec}`;
+    }
+
+     liSongDurationTag.innerText = `${totalMin}:${totalSec}`;
+     liSongTag.innerText = `${allSongs[i].src}`;
+//     // adding t-duration attribute with total duration value
+       liSongDurationTag.setAttribute("t-duration", `${totalMin}:${totalSec}`);
+   });
+}
