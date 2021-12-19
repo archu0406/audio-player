@@ -21,3 +21,56 @@ body{
 .container i{
     cursor: pointer;
   }
+  
+.head-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+  }
+
+  .head-bar span{
+    font-size: 25px;
+    font-weight: bold ;
+    justify-content: space-evenly;
+    color: black ;
+  }
+  
+  .album-cover-img{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-top: 25px;
+    border-radius: 50%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px white,
+      0 0 2px white,
+      13px 13px 20px whitesmoke,
+      -10px -10px 20px white;
+  }
+
+  .album-cover-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .album-info{
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  .album-info p{
+    color: darkolivegreen;
+  }
+
+  .album-info .name{
+    font-size: 25px;
+  }
+
+  .album-info .artist{
+    font-size: 18px;
+    opacity: 0.9;
+    line-height: 10px;
+  }
+
+  
