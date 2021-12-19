@@ -126,3 +126,9 @@ playArea.addEventListener("click", (e) => {
     playAudio();
 
 });
+
+//loop to the next song once the prev song is ended
+mainSong.addEventListener("ended", () => {
+    nextSong();
+    playAudio();
+});
