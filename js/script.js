@@ -13,6 +13,8 @@ const playList = container.querySelector(".playlist");
 const musicListBtn = container.querySelector("#music-list");
 const closeMusicList = container.querySelector("#closelist");
 
+let songIndex = Math.floor((Math.random() * allSongs.length) + 1);
+
 
 // load music function
 function loadSongs(indexNumb) {
@@ -72,3 +74,10 @@ nextBtn.addEventListener("click", () => {
 prevBtn.addEventListener("click", () => {
     prevSong();
 });
+
+//Adding volume control to the song
+volumeControl.addEventListener("click", (e) => {
+    mainSong.volume = e.currentTarget.value / 100;
+   
+});
+
