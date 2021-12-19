@@ -177,3 +177,38 @@ for (let i = 0; i < allSongs.length; i++) {
    });
 }
 
+const allLiSonglist = ulList.querySelectorAll("li");
+function playingMusic() {
+    for (let j = 0; j < allLiSonglist.length; j++) {
+   let songTag = allLiSonglist[j].querySelector(".song-duration");
+        // let remove playing class from all other li expect the last one which is clicked
+        if(allLiSonglist[j].classList.contains("playing")){
+            allLiSonglist[j].classList.remove("playing");
+        //  let's get that audio duration value and pass to .audio-duration innertext
+        let songDuration = songTag.getAttribute("t-duration");
+        songTag.innerText = songDuration;
+        }
+    
+        // if there is an li tag which li index is equal to musicIndex
+        // then this music is playing now and we'll style it
+    
+        if(allLiSonglist[j].getAttribute("li-index") == songIndex){
+            allLiSonglist[j].classList.add("playing");
+            songTag.innerText = "Playing";
+        }
+           
+        // adding on click attribute in all li tags
+        allLiSonglist[j].setAttribute("onclick", "clicked(this)");
+    }
+}
+
+// lets play song on click li 
+function clicked(element){
+
+    // getting li index of particular clicked li tag
+    let getLiIndex = element.getAttribute("li-index");
+    songIndex =  getLiIndex; //passing that liindex to musicIndex
+    loadSongs(songIndex);
+    playAudio(); 
+    playingMusic();  
+}
