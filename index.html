@@ -10,18 +10,51 @@
 
 <body>
     <div class="container">
+
       <div class="head-bar">
         <span>Now Playing</span>
       </div>
+
       <div class="album-cover-img">
         <img src="" alt="">
       </div>
+
       <div class="album-info">
         <p class="name"></p>
         <p class="artist"></p>
       </div>
+
+      <div class="play-area">
+
+        <div class="slide-bar">
+          <audio id="main-song" src=""></audio>
+        </div>
+
+        <div class="play-time">
+          <span class="current-time">0:00</span>
+          <span class="max-time">0:00</span>
+        </div>
+
+        <audio id="main-song" src=""></audio>
+        
+      </div>
+       
+      <div class="volume_section">
+          <i class="fa fa-volume-up fa-2x"></i>
+          <input type="range" id="volume-control">
+        </div> 
+  
+      <div class="audio-controls">
+        <i id="prev-btn" class="fa fa-fast-backward"></i>
+        <div class="play-pause">
+          <i class="fa fa-play"></i>
+        </div>
+        <i id="next-btn" class="fa fa-fast-forward"></i>
+        <i id="music-list" class="fa fa-list"></i>
+      </div>
   
     </div>
+    
 </body>
 
 </html>

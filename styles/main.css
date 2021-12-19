@@ -73,4 +73,141 @@ body{
     line-height: 10px;
   }
 
+  .play-area .play-time, 
+  .audio-controls, .playlist .header, .playlist ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+  }
+
+  .play-area{
+    height: 7px;
+    width: 100%;
+    border-radius: 50px;
+    background: lightgrey;
+    cursor: pointer;
+  }
+
+  .play-area .slide-bar{
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: whitesmoke;
+  }
+
+  .slide-bar::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    top: 50%;
+    right: -5px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);  
+    background: inherit;
+    transition: opacity 0.2s ease;
+  }
+
+  .play-area:hover .slide-bar::before{
+    opacity: 1;
+    pointer-events: visibleStroke;
+  }
+
+  .play-area .play-time{
+    margin-top: 3px;
+  }
+
+  .play-time span{
+    font-size: 13px; 
+    color: black;
+  }
+
+  .volume_section{
+    float: right;
+    color: white;
+    margin: 20px 0 3px 0;
+  }
+
+  .audio-controls{
+    margin: 70px 0 5px 0;
+  }
+
+  .audio-controls i{
+    font-size: 28px;
+    user-select: none;
+    background: white;
+    background-clip: text;
+     -webkit-background-clip: text; 
+     -webkit-text-fill-color: transparent; 
+  }
+
+  .audio-controls i:nth-child(2),
+  .audio-controls i:nth-child(4){
+    font-size: 43px;
+  } 
+
+  .audio-controls #prev-btn{
+    margin-right: -13px;
+  }
   
+  .audio-controls #next-btn{
+    margin-left: -13px;
+  }
+  
+  .audio-controls i.prev-btn{
+    font-size: 38px;
+  }
+
+  .audio-controls i.next-btn{
+      font-size: 38px;
+    
+  }
+  
+  .audio-controls .play-pause{
+    height: 54px;
+    width: 54px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 
+      0 0 2px #fff,
+      8px 8px 15px lightskyblue,
+      -3px -3px 15px #f0ecec;
+  }
+
+  .play-pause::before{
+    position: absolute;
+    content: "";
+    height: 43px;
+    width: 43px;
+    border-radius: inherit;
+    background: transparent;
+    border: 3px solid white;
+  }
+
+  .play-pause i{
+    height: 43px;
+    width: 43px;
+    line-height: 43px;
+    text-align: center;
+    background: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: green; 
+    position: absolute;  
+  }
+  
+  .prev-btn , .next-btn {
+    box-shadow: 
+      0 0 2px white,
+      8px 8px 15px lightyellow,
+      -3px -3px 15px white;
+    border-radius: 50%;
+  }
+
