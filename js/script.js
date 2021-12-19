@@ -15,6 +15,11 @@ const closeMusicList = container.querySelector("#closelist");
 
 let songIndex = Math.floor((Math.random() * allSongs.length) + 1);
 
+window.addEventListener("load", () => {
+    loadSongs(songIndex);
+    playingMusic();
+});
+
 
 // load music function
 function loadSongs(indexNumb) {
@@ -196,7 +201,7 @@ function playingMusic() {
             allLiSonglist[j].classList.add("playing");
             songTag.innerText = "Playing";
         }
-           
+
         // adding on click attribute in all li tags
         allLiSonglist[j].setAttribute("onclick", "clicked(this)");
     }
