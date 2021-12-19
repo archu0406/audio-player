@@ -133,6 +133,15 @@ mainSong.addEventListener("ended", () => {
     playAudio();
 });
 
+// show the playlist onclick music icon
+musicListBtn.addEventListener("click", () => {
+    playList.classList.toggle("show");
+});
+closeMusicList.addEventListener("click", () => {
+    musicListBtn.click();
+});
+
+
 const ulList = container.querySelector("ul");
 
 // let create li tags according to array length for list
@@ -167,3 +176,4 @@ for (let i = 0; i < allSongs.length; i++) {
        liSongDurationTag.setAttribute("t-duration", `${totalMin}:${totalSec}`);
    });
 }
+
