@@ -1,0 +1,2 @@
+Overview:
+This project is about a music player designed to play a set of songs which are already loaded into it. In this music player, you can move to the next song or previous song, play and pause the songs whenever needed. Also you can have the control to adjust the volume of the song which is currently being played. Songs queue playlist has been updated with the each song playtime. We can also select any song from the playlist to play as a current song. Whenever the current song ends the next song will be played automatically.
